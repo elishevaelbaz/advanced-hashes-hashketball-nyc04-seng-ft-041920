@@ -201,5 +201,20 @@ def player_stats(player_param)
 end
 
 def big_shoe_rebounds
+  
+  biggest_shoe = 0
+  # find the player with the largest shoe shoe_size
+  game_hash.each_pair do |home_or_away, value|
+    game_hash[home_or_away][:players].each do |player|  ##this is an array
+      
+      if player[:player_name] == player_param
+        return player
+        
+      end
+    end
+  end
+  # return their number of rebounds
+  
+end
 
 
