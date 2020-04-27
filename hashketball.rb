@@ -173,20 +173,6 @@ def team_names
   team_array
 end
 
-# def player_numbers
-#   numbers = []
-  
-# game_hash.each_pair do |home_or_away, value|
-#     game_hash[home_or_away][:players].each do |player|  ##this is an array
-      
-#       if player[:player_name] == player_param
-#         return player[:points]
-#       end
-#     end
-#   end
-# end
-
-
 
 def player_numbers(team_param)
   numbers = []
@@ -207,7 +193,8 @@ def player_stats(player_param)
     game_hash[home_or_away][:players].each do |player|  ##this is an array
       
       if player[:player_name] == player_param
-        return player.except!(:player_name)
+        return player.delete!(:player_name)
+        
       end
     end
   end
