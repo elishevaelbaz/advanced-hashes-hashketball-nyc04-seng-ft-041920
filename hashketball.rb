@@ -127,3 +127,91 @@ def game_hash
 end
 
 # Write code here
+
+def num_points_scored(player_param)
+  
+  game_hash.each_pair do |home_or_away, value|
+    game_hash[home_or_away][:players].each do |player|  ##this is an array
+      
+      if player[:player_name] == player_param
+        return player[:points]
+      end
+    end
+  end
+end
+
+
+
+def shoe_size(player_param)
+  
+  game_hash.each_pair do |home_or_away, value|
+    game_hash[home_or_away][:players].each do |player|  ##this is an array
+      
+      if player[:player_name] == player_param
+        return player[:shoe]
+      end
+    end
+  end
+end
+
+
+def team_colors(team_name)
+  game_hash.each_pair do |home_or_away, value|
+    if team_name == game_hash[home_or_away][:team_name]
+      return game_hash[home_or_away][:colors]
+    end
+  end
+  
+end
+
+
+def team_names
+  team_array = []
+  game_hash.each_pair do |home_or_away, value|
+    team_array << game_hash[home_or_away][:team_name]
+  end
+  team_array
+end
+
+# def player_numbers
+#   numbers = []
+  
+# game_hash.each_pair do |home_or_away, value|
+#     game_hash[home_or_away][:players].each do |player|  ##this is an array
+      
+#       if player[:player_name] == player_param
+#         return player[:points]
+#       end
+#     end
+#   end
+# end
+
+
+
+def player_numbers(team_param)
+  numbers = []
+  game_hash.each_pair do |home_or_away, value|
+    if game_hash[home_or_away][:team_name] == team_param
+      numbers = game_hash[home_or_away][:players].map do |player|  ##this is an array
+        player[:number]
+      end
+    end
+  end
+  numbers
+end
+
+
+
+def player_stats(player_param)
+  game_hash.each_pair do |home_or_away, value|
+    game_hash[home_or_away][:players].each do |player|  ##this is an array
+      
+      if player[:player_name] == player_param
+        return player.except!(:player_name)
+      end
+    end
+  end
+  
+end
+
+
