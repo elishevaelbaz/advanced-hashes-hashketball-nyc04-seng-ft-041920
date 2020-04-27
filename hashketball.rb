@@ -193,7 +193,6 @@ def player_stats(player_param)
     game_hash[home_or_away][:players].each do |player|  ##this is an array
       
       if player[:player_name] == player_param
-        player.delete(:player_name)
         return player
         
       end
