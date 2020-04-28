@@ -219,15 +219,11 @@ def find_player_with_biggest_shoes
   player_name
 end
 
-def find num_rebounds(player)
-  
-end
 
-def big_shoe_rebounds
-  biggest_shoe_player = find_player_with_biggest_shoes
-  
   # return their number of rebounds
-  game_hash.each_pair do |home_or_away, value|
+
+def find_num_rebounds(player)
+   game_hash.each_pair do |home_or_away, value|
     game_hash[home_or_away][:players].each do |player|  ##this is an array
       
       if player[:player_name] == biggest_shoe_player
@@ -236,7 +232,10 @@ def big_shoe_rebounds
       end
     end
   end
-  
+end
+
+def big_shoe_rebounds
+  find_num_rebounds(find_player_with_biggest_shoes)
   
 end
 
