@@ -217,6 +217,9 @@ def find_player_with_biggest_shoes
     end
   end
   player_name
+end
+
+def find num_rebounds(player)
   
 end
 
