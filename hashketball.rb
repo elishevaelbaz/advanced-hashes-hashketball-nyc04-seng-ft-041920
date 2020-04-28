@@ -235,8 +235,7 @@ def find_num_rebounds(player)
 end
 
 def big_shoe_rebounds
-  # biggest_shoe_player = find_player_with_biggest_shoes
-  
+  # finding the rebounds using the return value from find_player_with_biggest_shoes (which is a player's name)
   find_num_rebounds(find_player_with_biggest_shoes)
   
 end
