@@ -205,16 +205,18 @@ end
 # find the player with the largest shoe shoe_size
 def find_biggest_shoe_size
   biggest_shoe = 0
+  player_name = ""
   game_hash.each_pair do |home_or_away, value|
     game_hash[home_or_away][:players].each do |player|  ##this is an array
       
       if player[:shoe] > biggest_shoe
         biggest_shoe = player[:shoe]
+        player_name = player[:player_name]
         
       end
     end
   end
-  biggest_shoe
+  player_name
   
 end
 
